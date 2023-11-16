@@ -17,7 +17,7 @@ export default function Home() {
         <Header setApiKey={setApiKey}></Header>
       </div>
       <div className="flex h-4/6">
-        <Textbox readOnly={textareaReadOnly} setResponse={setApiResponse} setIsLoading={setIsLoading} apiKey={apiKey}></Textbox>
+        <Textbox readOnly={textareaReadOnly} setApiResponse={setApiResponse} setIsLoading={setIsLoading} apiKey={apiKey}></Textbox>
         <Result apiResponse={apiResponse} apiKey={apiKey}></Result>
       </div>
       <div className="h-1/6">

@@ -19,15 +19,10 @@ const Textbox = ({ readOnly, setApiResponse, setIsLoading, apiKey }) => {
     const prompt = `What does "${selectedText}" in "${textInput}" translate to in english. Just say the translation.`;
     const params = {
       messages: [{ role: 'user', content: prompt}],
-      model: 'gpt-3.5-turbo',
-      stream: true
+      model: 'gpt-3.5-turbo'
     };
     setIsLoading(true);
-    const stream = await openai.beta.chat.completions.stream(params);
-    for await (const chunk of stream) {
-      setApiResponse(chunk.choices[0]?.delta?.content || '');
-    }
-    const chatCompletion = await stream.finalChatCompletion();
+    const chatCompletion = await openai.chat.completions.create(params);
     setIsLoading(false);
     setApiResponse(chatCompletion.choices[0].message.content);
   };
