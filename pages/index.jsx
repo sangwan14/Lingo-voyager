@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Header from "../components/Header";
-import Textbox from "@/components/Textbox";
-import Result from "@/components/Result";
-import Actions from "@/components/Actions";
+import Textbox from "../components/Textbox";
+import Result from "../components/Result";
+import Actions from "../components/Actions";
 import React, { useState } from "react";
 
 export default function Home() {
